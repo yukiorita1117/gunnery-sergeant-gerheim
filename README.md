@@ -1,10 +1,16 @@
 ## Docker + React App + API Express + MySQL
 
-このプロジェクトのフロントエンド実装は React で行う。
+このプロジェクトのフロントエンド実装は React で行う。<br/>
 MySQL データベースに接続された設定済みの express API サーバー と、オプションで phpMyAdmin
 をデータベース管理者としてあらかじめ設定。さらに、すべてのスタックが Docker コンテナとして動作する。
 
-Docker をインストールしたら、以下のコードを実行して、開発用スタックや本番用スタックを設定する。
+## 使用アーキテクト
+
+- React
+- mysql
+- express(Sequelize)
+- phpMyAdmin
+- docker
 
 ```
 $ npm install -g create-react-app
