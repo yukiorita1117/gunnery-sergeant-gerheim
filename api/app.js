@@ -9,6 +9,8 @@ const cors = require("cors");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
+// var { MYSQL_ROOT_PASSWORD } = require("./env.js");
+
 var app = express();
 // Default port 3000 is already in use by the app
 app.listen(3001);
@@ -19,11 +21,19 @@ var connection = mysql.createConnection({
   host: "db",
   user: "root",
   password: process.env.MYSQL_ROOT_PASSWORD,
-  database: "dbname",
+  database: "testdb",
 });
 connection.connect(function (err) {
   if (err) throw err;
   console.log("Connected to db!");
+});
+
+// tableの中にdataを入れる。
+const sql =
+  "CREATE TABLE users (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255) NOT NULL)";
+connection.query(sql, function (err, result) {
+  if (err) throw err;
+  console.log("table created");
 });
 
 // setup cors
