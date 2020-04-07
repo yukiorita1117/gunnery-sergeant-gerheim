@@ -15,8 +15,7 @@ var app = express();
 // Default port 3000 is already in use by the app
 app.listen(3001);
 
-// Connection to the MySQL database
-// just uncomment the code bellow to connect to the MySQL DATABASE
+// MySQLデータベースへの接続
 var connection = mysql.createConnection({
   host: "db",
   user: "root",
