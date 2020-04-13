@@ -9,6 +9,7 @@ const cors = require("cors");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
+// TODO(orita)環境変数ちゃんと理解する。
 // var { MYSQL_ROOT_PASSWORD } = require("./env.js");
 
 var app = express();
@@ -24,7 +25,7 @@ var connection = mysql.createConnection({
 });
 connection.connect(function (err) {
   if (err) throw err;
-  console.log("Connected to db!");
+  console.log("Connected to db! DBに接続しました。");
 });
 
 // tableの中にdataを入れる。
