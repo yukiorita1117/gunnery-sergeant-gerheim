@@ -33,7 +33,7 @@ const sql =
   "CREATE TABLE users (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255) NOT NULL)";
 connection.query(sql, function (err, result) {
   if (err) throw err;
-  console.log("table created");
+  console.log("TABLEを作成しました！");
 });
 
 // setup cors
