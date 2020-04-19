@@ -36,7 +36,10 @@ connection.query(sql, function (err, result) {
   console.log("TABLEを作成しました！");
 });
 
+// TODO ここにcreate等のmysqlへの処理かく？参考コード探す。
+
 // setup cors
+// TODO cors調べる。
 app.use(cors());
 
 // view engine setup
