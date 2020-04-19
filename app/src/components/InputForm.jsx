@@ -1,4 +1,5 @@
 // TODO create のため。一旦雛形状態。
+// sqlとの通信になるのでstoreでfetchingの状態を管理する。
 
 import React from "react";
 import styled from "styled-components";
