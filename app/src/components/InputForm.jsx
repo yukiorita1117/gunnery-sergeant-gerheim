@@ -19,8 +19,7 @@ const InputForm = ({ store }) => {
         // store.dispatch(receiveDataSuccess(_resultArray)); // データをstoreに保存するとともにisFetchingをfalseに
       })
       .catch((err) => {
-        // データ受け取りに失敗
-        // console.error(new Error(err));
+        console.error(new Error(err));
         // store.dispatch(receiveDataFailed()); // isFetchingをfalseに
       });
   };
@@ -34,7 +33,7 @@ const InputForm = ({ store }) => {
       <br />
       <div>
         {isFetching ? (
-          // データをFetch中ならばローディングアイコンを表示
+          // データをFetch中ならばローディングを表示
           <h2>Now Loading...</h2>
         ) : (
           <div>
