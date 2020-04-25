@@ -26,9 +26,15 @@ var connection = mysql.createConnection({
 connection.connect(function (err) {
   if (err) throw err;
   console.log("Connected to db! DBに接続しました。");
+
+  const sql = "select * from users";
+  connection.query(sql, function (err, result, fields) {
+    if (err) throw err;
+    console.log("インサートの結果", result);
+  });
 });
 
-// tableの中にdataを入れる。
+// // tableの中にdataを入れる。
 // const sql =
 //   "CREATE TABLE users (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255) NOT NULL)";
 // connection.query(sql, function (err, result) {
