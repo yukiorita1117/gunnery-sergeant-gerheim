@@ -30,6 +30,7 @@ connection.connect(function (err) {
   const sql = "select * from users";
   connection.query(sql, function (err, result, fields) {
     if (err) throw err;
+    // インサートの結果 [ RowDataPacket { id: 2, name: 'Yukio Orita' } ]
     console.log("インサートの結果", result);
   });
 });
