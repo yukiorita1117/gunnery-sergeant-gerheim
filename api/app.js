@@ -23,6 +23,8 @@ var connection = mysql.createConnection({
   password: process.env.MYSQL_ROOT_PASSWORD,
   database: "testdb",
 });
+
+// INSERT
 connection.connect(function (err) {
   if (err) throw err;
   console.log("Connected to db! DBに接続しました。");
@@ -61,6 +63,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+
+app.get("/api/create", (req, res) => {
+  console.log("api create できている");
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
