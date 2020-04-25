@@ -29,12 +29,12 @@ connection.connect(function (err) {
 });
 
 // tableの中にdataを入れる。
-const sql =
-  "CREATE TABLE users (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255) NOT NULL)";
-connection.query(sql, function (err, result) {
-  if (err) throw err;
-  console.log("TABLEを作成しました！");
-});
+// const sql =
+//   "CREATE TABLE users (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255) NOT NULL)";
+// connection.query(sql, function (err, result) {
+//   if (err) throw err;
+//   console.log("TABLEを作成しました！");
+// });
 
 // TODO ここにcreate等のmysqlへの処理かく？参考コード探す。
 
