@@ -7,6 +7,7 @@ import axios from "axios";
 // import { requestData, receiveDataSuccess, receiveDataFailed } from "../actions";
 
 const InputForm = ({ store }) => {
+  const isFetching = false; //仮
   //   const { isFetching, resultArray } = store.getState().fetchData;
 
   const handleFetchData = () => {
@@ -15,6 +16,7 @@ const InputForm = ({ store }) => {
       .get("/api/create")
       .then((res) => {
         // データ受け取りに成功
+        console.log("ブラウザ側で受け取れている？", res);
         // const _resultArray = response.data;
         // store.dispatch(receiveDataSuccess(_resultArray)); // データをstoreに保存するとともにisFetchingをfalseに
       })
@@ -24,30 +26,30 @@ const InputForm = ({ store }) => {
       });
   };
 
+  const Wrapper = styled.div`
+    margin-top: 32px;
+  `;
+
   const Item = styled.li`
     list-style: none;
   `;
 
   return (
-    <>
-      <br />
-      <div>
-        {isFetching ? (
-          // データをFetch中ならばローディングを表示
-          <h2>Now Loading...</h2>
-        ) : (
-          <div>
-            <button onClick={() => handleFetchData()}>fetch data</button>
-            <ul>
-              {resultArray.map((result) => (
+    <Wrapper>
+      {isFetching ? (
+        // データをFetch中ならばローディングを表示
+        <h2>Now Loading...</h2>
+      ) : (
+        <div>
+          <button onClick={() => handleFetchData()}>fetch data</button>
+          <ul>
+            {/* {resultArray.map((result) => (
                 <Item key={result.id}>{`${result.inputText}`}</Item>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-      <br />
-    </>
+              ))} */}
+          </ul>
+        </div>
+      )}
+    </Wrapper>
   );
 };
 
