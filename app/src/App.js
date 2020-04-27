@@ -60,6 +60,7 @@ class App extends Component {
           </table>
         </div>
         <InputForm />
+        {/* ここにapi/show のresponseを表出する。 */}
       </div>
     );
   }
