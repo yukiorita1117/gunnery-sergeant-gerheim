@@ -45,6 +45,7 @@ class App extends Component {
           <table className="Table">
             <thead>
               <tr>
+                {/* serviceのusersからjsonを受け取っているだけ */}
                 <th>User Id</th>
                 <th>User name</th>
               </tr>
